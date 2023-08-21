@@ -190,7 +190,12 @@ function Home(props) {
                             }) :
                             <Item>
                                 <h1>Room List loading.......</h1>
-                                <CircleLoader />
+                                <div style={{
+                                    position:"absolute",
+                                    top:"40%"
+                                }}>
+                                   <CircleLoader />
+                                </div>
                             </Item>
                     }
                 </div>

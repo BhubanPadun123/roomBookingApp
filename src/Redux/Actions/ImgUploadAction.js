@@ -13,7 +13,7 @@ export const RoomImgUploadAction=(props)=>async(dispatch)=>{
         const formData = new FormData()
         formData.append('image',props.img)
 
-        const response = await axios.post(`${URL}/uploadRoomImg/${props.imgOwner}`,formData,{
+        const response = await axios.post(`${PURL}/uploadRoomImg/${props.imgOwner}`,formData,{
             headers:{'Content-Type':'multipart/form-data'}
         })
 

@@ -15,7 +15,7 @@ const RoomRegisteraction=(props)=>async(dispatch)=>{
             payload:{}
         })
 
-        const response = await axios.post(`${URL}/registerRoom`,props)
+        const response = await axios.post(`${PURL}/registerRoom`,props)
 
         if(response){
             dispatch({
@@ -43,7 +43,7 @@ const GetAllRoomListAction=()=>async(dispatch)=>{
             payload:{}
         })
         
-        const response = await axios.get(`${URL}/getroom`)
+        const response = await axios.get(`${PURL}/getroom`)
         if(response){
             dispatch({
                 type:actionTypes.GET_ALL_ROOM_RESPONSE,
@@ -74,7 +74,7 @@ const GoBookingRoomAction=(props)=>async(dispatch)=>{
         const userEmail = localStorage.getItem('userEmail')
 
         if(userEmail){
-            const response = await axios.post(`${URL}/go_booking/${userEmail}`,props.props)
+            const response = await axios.post(`${PURL}/go_booking/${userEmail}`,props.props)
 
             if(response){
                 dispatch({
@@ -111,7 +111,7 @@ const GetBookedRoomAction=(props) =>async(dispatch)=>{
 
         const userEmail = localStorage.getItem('userEmail')
         if(userEmail){
-            const response = await axios.get(`${URL}/get_booking_room/${userEmail}`)
+            const response = await axios.get(`${PURL}/get_booking_room/${userEmail}`)
 
             if(response){
                 dispatch({

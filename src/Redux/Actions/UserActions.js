@@ -10,7 +10,7 @@ export const SignUp=(props)=>async(dispatch)=>{
             payload:{}
         })
     
-        const response = await axios.post(`${URL}/UserSignup`,props)
+        const response = await axios.post(`${PURL}/UserSignup`,props)
         if(response){
             dispatch({
                 type:actionTypes.SIGNUP_RESPONSE,
@@ -38,7 +38,7 @@ export const Login =(props)=>async(dispatch)=>{
             payload:{}
         })
 
-        const response = await axios.get(`${URL}/login/${props.email}/${props.password}`,props)
+        const response = await axios.get(`${PURL}/login/${props.email}/${props.password}`,props)
         if(response){
             console.log("==>",response.data.data.gmail)
            localStorage.setItem("userEmail",response.data.data.gmail)
@@ -70,7 +70,7 @@ export const ResetPasswordAction=(props)=> async(dispatch)=>{
             payload:{}
         })
 
-        const response = await axios.put(`${URL}/reset`,props)
+        const response = await axios.put(`${PURL}/reset`,props)
 
         if(response){
             dispatch({
@@ -102,7 +102,7 @@ export const GetUserDetailes =()=> async(dispatch)=>{
                 payload:{}
             })
 
-            const response = await axios.get(`${URL}/user/${userEmail}`)
+            const response = await axios.get(`${PURL}/user/${userEmail}`)
 
             if(response){
                 dispatch({
